@@ -140,8 +140,8 @@ const styles = StyleSheet.create({
     },
 
     imageUser: {
-        width: 40,
-        height: 40,
+        width: 44,
+        height: 44,
         borderRadius: 4,
         borderWidth: 2,
         borderColor: "black"
