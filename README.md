@@ -1,14 +1,23 @@
-# Expo Router Example
+# DROPS App EXPO
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+O DROPS é um projeto de Física da Universidade Federal de Campina Grande que tem o intuito de levar para as escolas públicas o ensino da Física.
+Com a necessidade de atingir um maior público e melhorar o aprendizado dos alunos e professores, decidimos criar um aplicativo que não só impactariam o nosso público alvo, mas como as pessoas em geral.
 
-## 🚀 How to use
+## 🚀 Como usar
 
-```sh
-npx create-expo-app -e with-router
-```
+npm install -g expo-cli
+git clone https://github.com/LeviJunior21/DROPSWithRouter.git
+cd DROPSWithRouter
+npx expo start --tunnel
+[No celular baixe o Expo Go](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR&gl=US&pli=1)
+Entre no App e clique em ler QRCode.
+Aponte a câmera para o QRCode mostrado no terminal após realizar as etapas acima.
+Pronto!
 
-## 📝 Notes
+## 📝 Tecnologias utilizadas
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
+- React Native
+- React
+- React Native Animatable
+- Expo With Router
+- Expo Auth Session
