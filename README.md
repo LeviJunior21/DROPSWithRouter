@@ -12,7 +12,7 @@ Com a necessidade de atingir um maior público e melhorar o aprendizado dos alun
 - [No celular baixe o Expo Go](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR&gl=US&pli=1)
 - Entre no App e clique em ler QRCode.
 - Aponte a câmera para o QRCode mostrado no terminal após realizar as etapas acima.
-Pronto!
+- Pronto!
 
 ## 🚀 Tecnologias utilizadas
 
