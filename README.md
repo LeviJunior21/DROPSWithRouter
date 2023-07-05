@@ -14,7 +14,7 @@ Entre no App e clique em ler QRCode.
 Aponte a câmera para o QRCode mostrado no terminal após realizar as etapas acima.
 Pronto!
 
-## 📝 Tecnologias utilizadas
+## 🚀 Tecnologias utilizadas
 
 - React Native
 - React
