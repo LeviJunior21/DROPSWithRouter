@@ -18,6 +18,9 @@ Com a necessidade de atingir um maior público e melhorar o aprendizado dos alun
 
 - React Native
 - React
+- React Native Reanimated
 - React Native Animatable
 - Expo With Router
+- Expo Web Browser
 - Expo Auth Session
+- React Native Vector Icons
