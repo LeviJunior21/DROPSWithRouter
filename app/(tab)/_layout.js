@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Feather } from "@expo/vector-icons";
+import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Provider } from "../login/Provider";
 import { useEffect, useState } from "react";
 import * as Google from "expo-auth-session/providers/google";
@@ -83,6 +83,17 @@ function Layout() {
                         headerTintColor: "#8146DA",
                         tabBarIcon: ({color, size}) => (
                             <Feather name={"user"} color={color} size={size}/>
+                        )
+                    }}
+                />
+                 <Tabs.Screen 
+                    name = {"curiosities"} 
+                    options={{
+                        tabBarLabel: "Curiosidades", 
+                        headerTitle: "Curiosidades",
+                        headerTintColor: "black",
+                        tabBarIcon: ({color, size}) => (
+                            <MaterialCommunityIcons name={"emoticon-wink"} color={color} size={size}/>
                         )
                     }}
                 />

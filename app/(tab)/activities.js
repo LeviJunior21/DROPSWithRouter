@@ -2,6 +2,7 @@ import { View, StyleSheet, ImageBackground, StatusBar, FlatList, ScrollView } fr
 import Post from "../activities/post";
 import flatListData from "../activities/data";
 import * as Animatable from "react-native-animatable";
+import Separator from "../activities/Separator";
 
 function Page() {
 
@@ -12,6 +13,7 @@ function Page() {
                 <ScrollView>
                     <FlatList
                         data={flatListData}
+                        ItemSeparatorComponent={Separator(6)}
                         renderItem={({item, index}) => 
                             <Animatable.View animation="fadeInUp" delay={index * 100} useNativeDriver>
                                 <Post title={item.title} subtitle={item.subtitle} description={item.description}/>
