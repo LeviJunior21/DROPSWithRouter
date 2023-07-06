@@ -1,20 +1,21 @@
-import { View, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
+import { FlatList} from "react-native";
+import { useState } from "react";
+import * as Animatable from "react-native-animatable";
+import Item from "./item";
+import Separator from "../activities/Separator";
 
-function Curiosity({data}) {
+export default function Curiosity({data}) {
+    const [active, setActive] = useState(null);
+
     return (
-        <TouchableOpacity style={styles.container}>
-
-        </TouchableOpacity>
-    )
+            <FlatList
+                data={data}
+                ItemSeparatorComponent={Separator(6)}
+                renderItem={({item, index}) => 
+                    <Animatable.View animation="fadeInUp" delay={index * 100} useNativeDriver>
+                        <Item key={item} data={item} active={active} i={index} setActive={setActive}/>
+                    </Animatable.View>
+                }
+            />
+    );
 }
-
-export default Curiosity;
-
-const width = Dimensions.get("window").width;
-const styles = StyleSheet.create({
-    container: {
-        width: width,
-        height: 140,
-        backgroundColor: "gray"
-    }
-});
