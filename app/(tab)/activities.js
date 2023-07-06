@@ -2,10 +2,8 @@ import { View, StyleSheet, ImageBackground, StatusBar, FlatList, ScrollView } fr
 import Post from "../activities/post";
 import flatListData from "../activities/data";
 import * as Animatable from "react-native-animatable";
-import { useFocusEffect } from "@react-navigation/native";
-import { useEffect, useState } from "react";
 
-function Page({navigation}) {
+function Page() {
 
     return (
         <View style={styles.container}>
