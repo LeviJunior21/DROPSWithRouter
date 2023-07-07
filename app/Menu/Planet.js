@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View, Dimensions, Image } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { MaterialIcons } from "@expo/vector-icons";
 
 function Planet({data}) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -37,6 +37,10 @@ function Planet({data}) {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={[styles.card, frontAnimatedStyle]} onPress={flipCard}>
+        <View style={styles.touchIcon}>
+          <MaterialIcons name={"touch-app"} size={40} color={"white"}/>
+          <Text style={styles.textWithTouchIcon}>{"toque"}</Text>
+        </View>
         <View style={styles.textTopContainer}>
           <Text style={styles.textTop}>{"VISÃO GERAL"}</Text>
         </View>
@@ -115,6 +119,18 @@ const styles = StyleSheet.create({
   textTop: {
     fontSize: 24,
     fontWeight: "bold",
+    color: "white"
+  },
+
+  touchIcon: {
+    right: 40,
+    top: 100,
+    position: "absolute",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  textWithTouchIcon: {
     color: "white"
   },
 

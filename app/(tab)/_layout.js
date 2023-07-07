@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Feather, MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 import { Provider } from "../login/Provider";
 import { useEffect, useState } from "react";
 import * as Google from "expo-auth-session/providers/google";
@@ -60,7 +60,7 @@ function Layout() {
                         tabBarLabel: "Planetas", 
                         headerShown: false,
                         tabBarIcon: ({color, size}) => (
-                            <Feather name="home" color={color} size={size}/>
+                            <Ionicons name="planet" color={color} size={size}/>
                         )
                     }}
                 />
