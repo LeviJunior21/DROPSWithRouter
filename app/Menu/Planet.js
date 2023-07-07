@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   infoPlanetText: {
     fontSize: 13,
     fontWeight: "bold",
-    color: "#FFFFFFBF"
+    color: "white"
   },
 
   infoGeralContainer: {
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   textInfo: {
     color: "white",
     fontWeight: "bold",
-    fontSize: 10,
+    fontSize: 12,
   }
 });
 
