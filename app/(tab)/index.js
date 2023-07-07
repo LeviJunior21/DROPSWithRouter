@@ -2,6 +2,7 @@ import { StyleSheet, View, Dimensions, TouchableOpacity, TextInput, Animated } f
 import { useState } from "react";
 import Constants from "expo-constants";
 import AnimatedInput from "../Menu/Search";
+import SwiperPlanets from "../Menu/SwiperPlanets";
 
 function Page() {
   const [search, SetSearch] = useState("");
@@ -12,7 +13,7 @@ function Page() {
         <AnimatedInput value={search} onChange={SetSearch} placeHolder={"Pesquisar"}/>
       </View>
       <View style={styles.main}>
-
+        <SwiperPlanets/>
       </View>
     </View>
   );

@@ -3,8 +3,13 @@ import Post from "../activities/post";
 import flatListData from "../activities/data";
 import * as Animatable from "react-native-animatable";
 import Separator from "../activities/Separator";
+import { useEffect } from "react";
+import { LogBox } from "react-native";
 
 function Page() {
+    useEffect(() => {
+        LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
+    }, [])
 
     return (
         <View style={styles.container}>

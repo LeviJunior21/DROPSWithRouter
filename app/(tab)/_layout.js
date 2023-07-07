@@ -57,7 +57,7 @@ function Layout() {
                 <Tabs.Screen 
                     name = {"index"} 
                     options={{
-                        tabBarLabel: "Menú", 
+                        tabBarLabel: "Planetas", 
                         headerShown: false,
                         tabBarIcon: ({color, size}) => (
                             <Feather name="home" color={color} size={size}/>
