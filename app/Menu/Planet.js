@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View, Dimensions, Image } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 function Planet({data}) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -66,6 +67,20 @@ function Planet({data}) {
         </View>
       </TouchableOpacity>
       <TouchableOpacity style={[styles.card, styles.cardBack, backAnimatedStyle]} onPress={flipCard}>
+        <View style={[styles.textTopContainerInternal, {marginTop: -40}]}>
+          <Text style={styles.textTop}>{"ESTRUTURA INTERNA"}</Text>
+        </View>
+        <Image style={[styles.imagePrincipal, {marginTop: 0, height: 150}]} source={data.imageInternal} />
+        <View style={[styles.planetNameContainer, {paddingVertical: 0}]}>
+          <Text style={styles.infoPlanetText}>{data.structure}</Text>
+        </View>
+        <View style={styles.textTopContainerInternal}>
+          <Text style={styles.textTop}>{"GEOLOGIA DA SUPERFÍCIE"}</Text>
+        </View>
+        <Image style={[styles.imagePrincipal, {marginTop: 20, height: 150}]} source={data.imageStructure} />
+        <View style={[styles.planetNameContainer, {paddingVertical: 0}]}>
+          <Text style={styles.infoPlanetText}>{data.geology}</Text>
+        </View>
       </TouchableOpacity>
     </View>
   );
@@ -87,6 +102,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
+  },
+
+  textTopContainerInternal: {
+    width: 0.97 * width,
+    height: 50,
+    marginTop: 10,
+    justifyContent: "center",
+    alignItems: "center"
   },
 
   textTop: {
@@ -118,7 +141,6 @@ const styles = StyleSheet.create({
 
   cardBack: {
     position: 'absolute',
-    backgroundColor: 'gray', 
     width: width - 8,
     height: height - 154,
     borderRadius: 5
