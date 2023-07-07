@@ -36,8 +36,34 @@ function Planet({data}) {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={[styles.card, frontAnimatedStyle]} onPress={flipCard}>
+        <View style={styles.textTopContainer}>
+          <Text style={styles.textTop}>{"VISÃO GERAL"}</Text>
+        </View>
         <Image style={styles.imagePrincipal} source={data.imagePrincipal} />
-        <Text>{data.planetName}</Text>
+        <View style={styles.planetNameContainer}>
+          <Text style={styles.planetNameText}>{data.planetName.toUpperCase()}</Text>
+        </View>
+        <View style={styles.infoPlanetContainer}>
+          <Text style={styles.infoPlanetText}>{data.infoPlanet}</Text>
+        </View>
+        <View style={styles.infoGeralContainer}>
+          <View style={styles.squareInfo}>
+            <Text style={styles.squareInfoTopText}>{"ROTAÇÃO"}</Text>
+            <Text style={styles.textInfo}>{data.rotacao} {"HORAS"}</Text>
+          </View>
+          <View style={styles.squareInfo}>
+            <Text style={styles.squareInfoTopText}>{"REVOLUÇÃO"}</Text>
+            <Text style={styles.textInfo}>{data.revolucao} {"ANOS"}</Text>
+          </View>
+          <View style={styles.squareInfo}>
+            <Text style={styles.squareInfoTopText}>{"RAIO"}</Text>
+            <Text style={styles.textInfo}>{data.raio} {"KM"}</Text>
+          </View>
+          <View style={styles.squareInfo}>
+            <Text style={styles.squareInfoTopText}>{"TEMPERATURA"}</Text>
+            <Text style={styles.textInfo}>{data.raio} {"°C"}</Text>
+          </View>
+        </View>
       </TouchableOpacity>
       <TouchableOpacity style={[styles.card, styles.cardBack, backAnimatedStyle]} onPress={flipCard}>
       </TouchableOpacity>
@@ -54,10 +80,32 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
+  textTopContainer: {
+    width: 0.97 * width,
+    height: 50,
+    top: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+  },
+
+  textTop: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "white"
+  },
+
   imagePrincipal: {
     width: width,
     height: 200,
     resizeMode: "contain"
+  },
+
+  planetNameContainer: {
+    width: 0.97 * width,
+    paddingVertical: 20,
+    justifyContent: "center",
+    alignItems: "center"
   },
 
   card: {
@@ -74,6 +122,54 @@ const styles = StyleSheet.create({
     width: width - 8,
     height: height - 154,
     borderRadius: 5
+  },
+
+  planetNameText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "white"
+  },
+
+  infoPlanetContainer: {
+    width: 0.96 * width,
+    padding: 14
+  },
+
+  infoPlanetText: {
+    fontSize: 13,
+    fontWeight: "bold",
+    color: "#FFFFFFBF"
+  },
+
+  infoGeralContainer: {
+    width: 0.98 * width,
+    height: 80,
+    bottom: 10,
+    position: "absolute",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+
+  squareInfo: {
+    width: 0.23 * width,
+    height: 70,
+    borderWidth: 2,
+    borderColor: "white",
+    justifyContent: "space-around",
+    alignItems: "center"
+  },
+
+  squareInfoTopText: {
+    fontSize: 11,
+    color: "#FFFFFFBF",
+    fontWeight: "bold"
+  },
+
+  textInfo: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 10,
   }
 });
 

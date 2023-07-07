@@ -6,7 +6,8 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View
+    View,
+    ImageBackground
 } from 'react-native';
 import { planets } from './AllPlanets';
 import Planet from './Planet';
@@ -16,27 +17,27 @@ export default function SwiperPagerButton() {
     const buttons = planets;
     const onCLick = i => this.scrollView.scrollTo({ x: i * width });
     return (
-        <View style={styles.container}>
-            <View style={{ padding: 5, paddingTop: 0 }}>
+        <ImageBackground style={styles.container} source={require("../assets/stars.jpg")}>
+            <View style={{ padding: 5, paddingTop: 0, backgroundColor: "#303030"}}>
                 <ButtonContainer buttons={buttons} onClick={onCLick} scrollX={scrollX} />
             </View>
-            <ScrollView
-                ref={e => (this.scrollView = e)}
-                horizontal
-                pagingEnabled
-                decelerationRate="fast"
-                showsHorizontalScrollIndicator={false}
-                onScroll={Animated.event(
-                    [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-                    { useNativeDriver: false },
-                )}>
-                {buttons.map(x => (
-                    <View style={[styles.card]} key={x}>
-                        <Planet data={x}/>
-                    </View>
-                ))}
-            </ScrollView>
-        </View>
+                <ScrollView
+                    ref={e => (this.scrollView = e)}
+                    horizontal
+                    pagingEnabled
+                    decelerationRate="fast"
+                    showsHorizontalScrollIndicator={false}
+                    onScroll={Animated.event(
+                        [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+                        { useNativeDriver: false },
+                    )}>
+                    {buttons.map(x => (
+                        <View style={[styles.card]} key={x}>
+                            <Planet data={x}/>
+                        </View>
+                    ))}
+                </ScrollView>
+        </ImageBackground>
     );
 }
 
@@ -89,6 +90,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingVertical: 5
     },
+    
     btnContainer: {
         height: 40,
         borderRadius: 5,
@@ -97,11 +99,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#00000011',
         width: width,
     },
+
     btn: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
+
     animatedBtnContainer: {
         height: 40,
         flexDirection: 'row',
@@ -109,25 +113,30 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         backgroundColor: '#444',
     },
+
     animatedBtn: {
         height: 40,
         justifyContent: 'center',
         alignItems: 'center',
     },
+
     btnTextActive: {
         color: 'red',
         fontWeight: 'bold',
         fontSize: 11
     },
+
     textTop: {
         fontSize: 11,
-        color: "white"
+        color: "white",
+        fontWeight: "bold"
     },
+
     card: {
         width: width - 10,
         flex: 1,
         marginHorizontal: 5,
         borderRadius: 5,
-        backgroundColor: "white"
+        //backgroundColor: "white"
     },
 });
