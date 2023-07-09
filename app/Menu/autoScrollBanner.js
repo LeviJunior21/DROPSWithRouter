@@ -63,11 +63,11 @@ export default function AutoScrollBannerReanimated() {
 
 const styles = StyleSheet.create({
   list: {
-    height: 150
+    height: 200
   },
 
   item: {
-    height: 150,
+    height: 200,
     width: width,
     backgroundColor: 'red',
     borderRadius: 4,
@@ -83,14 +83,14 @@ const styles = StyleSheet.create({
 
   imageBackground: {
     width: width,
-    height: 150,
+    height: 200,
     justifyContent: "center",
     alignItems: "center"
   },
 
   imageBackgroundStyle: {
     flex: 1,
-    resizeMode: "cover"
+    resizeMode: "contain"
   },
 
   titleImage: {
