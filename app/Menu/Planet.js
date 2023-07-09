@@ -208,6 +208,19 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     fontSize: 12,
+  },
+
+  linkContainer: {
+    width: 0.97 * width,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  textLink: {
+    fontWeight: "bold",
+    color: "white",
+    textDecorationLine: "underline",
+    textDecorationColor: "purple"
   }
 });
 
