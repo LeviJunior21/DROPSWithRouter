@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View, Dimensions, Image } from 'react-native';
 import { MaterialIcons } from "@expo/vector-icons";
 
-function Planet({data}) {
+function Planet({data, setPlanet}) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [flipAnim] = useState(new Animated.Value(0));
 
   const flipCard = () => {
+    setPlanet(data.planetName)
     Animated.timing(flipAnim, {
       toValue: isFlipped ? 0 : 180,
       duration: 500,

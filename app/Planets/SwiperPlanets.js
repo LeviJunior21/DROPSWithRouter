@@ -12,7 +12,7 @@ import {
 import { planets } from './AllPlanets';
 import Planet from './Planet';
 
-export default function SwiperPagerButton() {
+export default function SwiperPagerButton({ setPlanet }) {
     const scrollX = useRef(new Animated.Value(0)).current;
     const buttons = planets;
     const onCLick = i => this.scrollView.scrollTo({ x: i * width });
@@ -33,7 +33,7 @@ export default function SwiperPagerButton() {
                     )}>
                     {buttons.map(x => (
                         <View style={[styles.card]} key={x}>
-                            <Planet data={x}/>
+                            <Planet data={x} setPlanet={setPlanet}/>
                         </View>
                     ))}
                 </ScrollView>

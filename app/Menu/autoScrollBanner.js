@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
 
   imageBackgroundStyle: {
     flex: 1,
-    resizeMode: "contain"
+    resizeMode: "cover"
   },
 
   titleImage: {

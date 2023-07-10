@@ -1,19 +1,24 @@
-import { StyleSheet, View, Dimensions, TouchableOpacity, TextInput, Animated } from "react-native";
+import { StyleSheet, View, Text, Dimensions } from "react-native";
 import { useState } from "react";
 import Constants from "expo-constants";
-import AnimatedInput from "../Planets/Search";
 import SwiperPlanets from "../Planets/SwiperPlanets";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Ionicons } from "@expo/vector-icons";
 
 function Page() {
-  const [search, SetSearch] = useState("");
+  const [planet, setPlanet] = useState("Mercúrio");
 
   return (
     <View style={styles.container}>
       <View style={styles.nav}>
-        <AnimatedInput value={search} onChange={SetSearch} placeHolder={"Pesquisar"}/>
+        <Text style={styles.namePlanetNav}>{"DROPS NML"}</Text>
+        <Ionicons name="planet" color={"blue"} size={26}/>
+        <TouchableOpacity style={styles.buttomWikipedia}>
+          <Text style={styles.textWikipedia}>{"Wikipédia"}</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.main}>
-        <SwiperPlanets/>
+        <SwiperPlanets setPlanet={setPlanet}/>
       </View>
     </View>
   );
@@ -42,6 +47,24 @@ const styles = StyleSheet.create({
     main: {
       flex: 1,
       backgroundColor: "#303030"
+    },
+
+    namePlanetNav: {
+      fontSize: 18,
+      width: 140,
+      fontWeight: "bold",
+      color: "purple"
+    },
+    
+    buttomWikipedia: {
+      height: 40,
+      width: 140,
+      justifyContent: "center",
+      alignItems: "flex-end"
+    },
+
+    textWikipedia: {
+      fontWeight: "500"
     }
 });
   
