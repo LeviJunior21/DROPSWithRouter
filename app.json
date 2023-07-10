@@ -5,6 +5,7 @@
       "bundler": "metro"
     },
     "name": "DropsApp",
-    "slug": "DropsApp"
+    "slug": "DropsApp",
+    "orientation": "portrait"
   }
 }
